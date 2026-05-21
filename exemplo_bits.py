@@ -3,13 +3,13 @@ from clientemodbus import ClienteMODBUS
 def main():
     cliente = ClienteMODBUS('localhost', 502)
     if cliente.connect():
-        addr = 200
+        addr = 100
         
         cliente.escreveDado(1, addr, 0)
         
         print("Ligando bit 2 e bit 7...")
-        cliente.escreveBits(addr, 1, 2)
-        cliente.escreveBits(addr, 1, 7)
+        cliente.escreveBits(addr, 1, 14)
+        cliente.escreveBits(addr, 1, 3)
         
         bits = cliente.lerBitsHolding(addr)
         print("Estado atual dos bits:")
